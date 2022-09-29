@@ -1,10 +1,11 @@
 stages:
   - make_assets
-  - build_slides
   - embed_reveal
   - docusaurus
 
 build_dir: /build
+output_type: last
+output_dir: /output
 
 make_assets:
   plugin: command
@@ -14,13 +15,6 @@ make_assets:
       - content/chapters/compute/lecture
     args:
       - all
-
-build_slides:
-  input: /build/make_assets
-  plugin: revealmd
-  options:
-    build:
-      Compute: content/chapters/compute/lecture/slides.md
 
 embed_reveal:
   plugin: reveal_embed
@@ -45,11 +39,11 @@ docusaurus:
             location: content/chapters/compute/lab
             name: README
     static_assets:
-      - /build/build_slides/Compute
+      - Compute: /build/make_assets/content/chapters/compute/lecture/_site
     config_meta:
       title: Operating Systems
       url: http://localhost/
-      baseUrl: /
+      baseUrl: /operating-systems-oer/
       onBrokenLinks: warn
       onBrokenMarkdownLinks: warn
     config_socials:
