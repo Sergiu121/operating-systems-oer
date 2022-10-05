@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Operating Systems',
-  url: 'http://localhost/',
-  baseUrl: '/',
+  url: 'https://sergiu121.github.io/',
+  baseUrl: '/operating-systems-oer/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   presets: [
